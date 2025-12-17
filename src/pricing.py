@@ -23,7 +23,7 @@ def format_price(price: float) -> int:
     """
     # BUG: This truncates instead of rounding!
     # int(19.99) = 19, but we want 20
-    return int(price)
+    return round(price)
 
 
 def convert_currency(amount: float, exchange_rate: float) -> float:
@@ -43,6 +43,7 @@ def convert_currency(amount: float, exchange_rate: float) -> float:
         >>> convert_currency(50, 1.18)   # EUR to USD
         59.0
     """
+    return amount * exchange_rate
     # TODO: Implement this function!
     # Hint: It's a simple multiplication
     pass
